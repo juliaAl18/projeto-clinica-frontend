@@ -1,0 +1,108 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to right, #73a4b9, #0086c5,#003b56);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center; /* Centraliza horizontalmente */
+  align-items: center; /* Centraliza verticalmente */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.plan-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.plan {
+  width: calc(33.33% - 20px);
+  border-radius: 10px;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  display: flex; /* Adiciona display flex */
+  flex-direction: column; /* Organiza os elementos verticalmente */
+}
+
+.plan .btn {
+  margin-top: auto; /* Move o botão para o final do plano */
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #5AC8FA;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: #5AC8FA;
+  transform: scale(1.05);
+}
+
+.plan h2 {
+  color: #5AC8FA;
+  text-align: center;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.plan p {
+  color: #666;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.price-container {
+  text-align: center; /* Alinha o texto ao centro */
+  margin-bottom: 15px; /* Espaçamento inferior para separar do botão */
+}
+
+.price {
+  font-size: 24px;
+  color: #5ac8fa;
+  font-weight: bold;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  background-color: #5ac8fa;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+  background-color: #4ba3d5;
+  transform: scale(1.05);
+}

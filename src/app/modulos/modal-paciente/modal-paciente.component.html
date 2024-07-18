@@ -1,0 +1,23 @@
+<h2>Selecione um Paciente</h2>
+
+<div class="modal-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let paciente of pacientes"
+          [class.selected]="paciente === pacienteSelecionado"
+          (click)="selecionarPacientes(paciente)">
+        <td>{{ paciente.nome }}</td>
+        <td>{{ paciente.cpf }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <button mat-raised-button color="primary" class="confirm-button" (click)="confirmarSelecao()">
+    Confirmar Seleção
+  </button>
+</div>

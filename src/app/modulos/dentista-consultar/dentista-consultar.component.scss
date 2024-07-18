@@ -1,0 +1,130 @@
+.div-geral {
+  padding: 32px;
+  background-color: #f5f5f5;
+  min-height: calc(100vh - 65px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-informacoes {
+  border-radius: 8px;
+  background-color: #fff;
+  padding: 24px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 30px;
+}
+
+.title-aplication {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+}
+
+.title-aplication h1 {
+  font-weight: 600;
+  font-size: 24px;
+  color: #008080;
+  margin-bottom: 50px;
+}
+
+.sub-div-container-buttons-inputs {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.sub-div-container-buttons-inputs .campo {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.mat-form-field {
+  width: 300px;
+  margin-right: 10px;
+}
+
+.botao-pesquisar-aviso button {
+  height: 50px;
+  min-width: 140px;
+  padding: 0 20px;
+  background-color: #48d1cc;
+  color: #fff;
+  border: 2px solid transparent;
+  border-radius: 25px;
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.botao-pesquisar-aviso button:hover {
+  background-color: #48d1cc;
+}
+
+.table-container {
+  overflow-x: auto;
+  margin-top: 20px;
+}
+
+.table-Properties {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  padding: 12px;
+  text-align: left;
+  background-color: #48d1cc;
+  color: black;
+}
+
+td {
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+  color: #555;
+}
+
+.table-sem-conteudo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  color: #888;
+}
+
+.table-sem-conteudo h3 {
+  font-size: 1.2rem;
+  color: #5ac8fa;
+}
+
+.div-button-add-models button {
+  height: 50px;
+  width: 216px;
+  background-color: #48d1cc;
+  color: black;
+  border: none;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.campo {
+  width: 250px;
+}
+
+.div-button-add-models button:hover {
+  background-color: #48d1cc;
+}

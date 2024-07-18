@@ -1,0 +1,116 @@
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #5ac8fa, #007f7b, #87cefa);
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 450px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+}
+
+.appointment-form {
+  display: flex;
+  flex-direction: column;
+  color: black;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.validation-icon {
+  margin-left: 10px;
+}
+
+.valid-icon,
+.invalid-icon {
+  font-size: 20px;
+}
+
+.valid-icon {
+  color: #44bd32;
+}
+
+.invalid-icon {
+  color: #e84118;
+}
+
+.btn-submit {
+  background-color: #188b88;
+  color: black;
+  border: none;
+  padding: 14px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #48d1cc;
+}
+
+.success-message {
+  margin-top: 20px;
+  color: #44bd32;
+  font-weight: bold;
+  animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.mat-datepicker-toggle {
+  color: #007bff;
+  cursor: pointer;
+}
+
+.mat-form-field {
+  width: 100%;
+}
+
+#data {
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  font-size: 16px;
+}

@@ -1,0 +1,60 @@
+<body class="body-gradient">
+  <div class="div-geral">
+    <mat-card class="card-informacoes">
+      <header>
+        <div class="div-header">
+          <div class="title-aplication">
+            <h1 style="color: #008000; font-weight: 600; font-size: 27px;">Cadastrar novo equipamento</h1>
+          </div>
+        </div>
+      </header>
+
+      <div class="row div-dados-pessoais">
+        <form [formGroup]="equipamentoForm" (ngSubmit)="cadastrarEquipamento()">
+          <div class="row formulario">
+            <div class="col-lg-6">
+              <mat-form-field appearance="outline" class="fullwidth">
+                <mat-label>Nome</mat-label>
+                <input matInput formControlName="nome" placeholder="Digite o nome do equipamento">
+              </mat-form-field>
+            </div>
+
+            <div class="col-lg-6">
+              <mat-form-field appearance="outline" class="fullwidth">
+                <mat-label>Tipo</mat-label>
+                <input matInput formControlName="tipo" placeholder="Digite o tipo do equipamento">
+              </mat-form-field>
+            </div>
+
+            <div class="col-lg-6">
+              <mat-form-field appearance="outline" class="fullwidth">
+                <mat-label>Marca</mat-label>
+                <input matInput formControlName="marca" placeholder="Digite a marca do equipamento">
+              </mat-form-field>
+            </div>
+
+            <div class="col-lg-6">
+              <mat-form-field appearance="outline" class="fullwidth">
+                <mat-label>Modelo</mat-label>
+                <input matInput formControlName="modelo" placeholder="Digite o modelo do equipamento">
+              </mat-form-field>
+            </div>
+
+            <div class="col-lg-6">
+              <mat-form-field appearance="outline" class="fullwidth">
+                <mat-label>Ano de Fabricação</mat-label>
+                <input matInput formControlName="ano_fabricacao" placeholder="Digite o ano de fabricação">
+              </mat-form-field>
+            </div>
+
+            <div class="col-lg-12 botoes-formulario-cadastro-avaliacoes">
+              <button mat-flat-button color="warn" type="button" (click)="sairTelaDeCadastro()">Cancelar</button>
+              <button mat-flat-button color="primary" type="submit"
+                [disabled]="equipamentoForm.invalid">Cadastrar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </mat-card>
+  </div>
+</body>

@@ -1,0 +1,41 @@
+<body class="body-gradient">
+  <div class="container">
+    <h2 style="color: black; font-size: 1.75rem;">Agendar Consulta</h2>
+
+    <form (ngSubmit)="agendarConsulta()" class="appointment-form">
+      <div class="form-group">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" [(ngModel)]="nome" required #nomeInput="ngModel">
+        <span class="validation-icon" [ngClass]="{'valid-icon': nomeInput.valid, 'invalid-icon': nomeInput.invalid}">
+          <i class="fas fa-check-circle" *ngIf="nomeInput.valid"></i>
+          <i class="fas fa-times-circle" *ngIf="nomeInput.invalid"></i>
+        </span>
+      </div>
+
+      <div class="form-group">
+        <label for="telefone">Telefone(Com DDD):</label>
+        <input type="text" id="telefone" name="telefone" [(ngModel)]="telefone" required>
+      </div>
+
+      <div class="form-group">
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="dataSelecionada" [(ngModel)]="dataSelecionada"
+          (ngModelChange)="onDataSelecionadaChange()" required>
+      </div>
+
+      <div class="form-group">
+        <label for="horario">Horário:</label>
+        <select id="horario" name="horarioSelecionado" [(ngModel)]="horarioSelecionado" required>
+          <option *ngFor="let horario of horariosDisponiveis" [value]="horario">{{ horario }}</option>
+        </select>
+      </div>
+
+      <button type="submit" class="btn-submit">Agendar Consulta</button>
+    </form>
+  </div>
+
+  <div class="botao">
+    <button (click)="toggleMenu()"></button>
+    <app-menu-lateral></app-menu-lateral>
+  </div>
+</body>

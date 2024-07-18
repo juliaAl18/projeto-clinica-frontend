@@ -1,0 +1,38 @@
+<body>
+<div class="container">
+  <div class="form-container">
+    <h2 style="color: #4682B4; font-weight: 600; font-size: 27px;">Cadastro de Pagamento</h2>
+    <div class="form-group">
+      <label for="nomePaciente">Nome do Paciente</label>
+      <input id="nomePaciente" [(ngModel)]="nomePaciente" placeholder="Nome do Paciente" required>
+    </div>
+    <div class="form-group">
+      <button mat-button (click)="abrirModalSelecaoPaciente()">Selecionar Paciente</button>
+    </div>
+    <div class="form-group">
+      <label for="nomeDentista">Nome do Dentista</label>
+      <input id="nomeDentista" [(ngModel)]="nomeDentista" placeholder="Nome do Dentista" required>
+    </div>
+    <div class="form-group">
+      <button mat-button (click)="abrirModalSelecaoDentista()">Selecionar Dentista</button>
+    </div>
+    <div class="form-group">
+      <label for="valor">Valor</label>
+      <input id="valor" [(ngModel)]="valor" [ngModelOptions]="{standalone: true}" type="number" placeholder="Valor" required>
+    </div>
+    <div class="form-group">
+      <label for="metodoPagamento">Método de Pagamento</label>
+      <input id="metodoPagamento" [(ngModel)]="metodoPagamento" [ngModelOptions]="{standalone: true}" placeholder="Método de Pagamento" required>
+    </div>
+    <div class="form-group">
+      <label for="dataPagamento">Data do Pagamento</label>
+      <input id="dataPagamento" type="date" [(ngModel)]="dataPagamento" [ngModelOptions]="{standalone: true}" required>
+    </div>
+    <div class="col-lg-12 botoes-formulario-cadastro">
+      <button mat-flat-button color="warn" type="button" (click)="cancelar()" >Cancelar</button>
+      <button mat-button (click)="cadastrarPagamento()">Cadastrar Pagamento</button>
+    </div>
+   
+   </div>
+</div>
+</body>

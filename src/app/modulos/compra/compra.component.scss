@@ -1,0 +1,146 @@
+.container {
+    max-width: 89%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .valor-compra,
+  .metodos-pagamento,
+  .dados-cartao,
+  .qr-code {
+    margin-bottom: 30px;
+    margin: 0 10px;
+    width: 100%;
+  }
+  
+  .metodo {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+    border: 1px solid #e9ecef;
+    background-color: #fff;
+  }
+  
+  .metodo img {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+  }
+  
+  .metodo span {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .metodo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-group {
+    margin-bottom: 20px;
+  }
+  
+  .input-group label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: block;
+    color: #555;
+  }
+  
+  .input-group input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    box-sizing: border-box;
+  }
+  
+  .qr-code img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dados-cartao {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+  }
+  
+  .campo {
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  .resumo-compra {
+    background-color: #ffffff;
+    border: 1px solid #e0ebf7;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(130, 102, 102, 0.1);
+    text-align: center;
+    max-width: 300px; /* Ajuste conforme necessário */
+    margin: 0 auto;
+    width: 100%;
+  }
+  
+  h2 {
+    color: #5AC8FA;
+    font-size: 30px;
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    font-size: 18px;
+    margin-top: 15px;
+  }
+  
+  
+  p:last-child {
+    margin-bottom: 0;
+  }
+  
+  
+  
+  
+  
+  
+  
+  

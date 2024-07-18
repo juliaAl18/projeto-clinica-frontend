@@ -1,0 +1,85 @@
+.body-gradient {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #5afa72, #007836, #9affd3);
+  transition: background-color 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-geral {
+  padding: 32px;
+  width: 70%;
+  margin: auto;
+}
+
+.card-informacoes {
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  padding: 24px;
+}
+
+.title-aplication {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title-aplication h1 {
+  font-weight: 600;
+  font-size: 27px;
+  color: #ffffff;
+}
+
+.formulario {
+  margin-top: 20px;
+}
+
+.mat-form-field {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.botoes-formulario-cadastro-avaliacoes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+button {
+  min-width: 160px;
+  height: 48px;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button[color="warn"] {
+  background-color: #98fb98;
+  color: black;
+}
+
+button[color="primary"] {
+  background-color: #98fb98;
+  color: black;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+button span {
+  padding-left: 8px;
+}
+
+button i {
+  margin-right: 8px;
+}

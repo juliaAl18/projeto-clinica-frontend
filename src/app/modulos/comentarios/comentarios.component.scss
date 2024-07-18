@@ -1,0 +1,96 @@
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40vh;
+}
+
+.carousel-container {
+  position: relative;
+  height: 250px;
+  width: 1000px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.carousel-track {
+  display: flex;
+}
+
+.carousel-item {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px;
+  transition: transform 0.3s ease-in-out;
+  background-color: #f7f7f7;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-container .arrow {
+  position: absolute;
+  top: 25%;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.carousel-container .arrow.left {
+  left: 10px;
+  z-index: 1;
+}
+
+.carousel-container .arrow.right {
+  right: 10px;
+}
+
+.carousel-container .arrow i {
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-container .arrow i {
+  position: relative;
+  top: 1px;
+}
+
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slideRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.rating {
+  font-size: 20px;
+}
+
+.rating i {
+  color: #857f59;
+}
+
+.rating .rated {
+  color: #ffd700;
+}

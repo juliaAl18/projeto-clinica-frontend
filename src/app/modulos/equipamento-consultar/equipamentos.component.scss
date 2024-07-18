@@ -1,0 +1,144 @@
+.div-geral {
+  margin: 0;
+  padding: 32px;
+  background-color: #e4e4e4;
+  min-height: calc(100vh - 65px);
+}
+
+.card-informacoes {
+  border-radius: 8px;
+  background-color: #f5f5f5;
+  padding: 24px;
+  margin-top: 20px;
+}
+
+.title-aplication {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title-aplication h1 {
+  font-weight: 500;
+  font-size: 1.75rem;
+  font-family: Roboto;
+  letter-spacing: 0px;
+  color: #008000;
+  padding-top: 35px;
+}
+
+.sub-div-container-buttons-inputs {
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.sub-div-container-buttons-inputs .campo {
+  margin-right: 1.2rem;
+  width: 20%;
+}
+
+.formulario-filtros {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+.botao-pesquisar-aviso button {
+  height: 50px;
+  width: 140px;
+  background-color: #98fb98;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.botao-pesquisar-aviso button:hover {
+  background-color: #008000;
+}
+
+.botao-pesquisar-aviso button span {
+  color: black;
+  font-size: 18px;
+}
+
+.table-aplication {
+  width: 100%;
+  margin-top: 20px;
+}
+
+table {
+  width: 100%;
+  min-width: 800px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+th {
+  padding: 12px;
+  text-align: left;
+  color: #2b2b2b;
+  background-color: #98fb98;
+}
+
+td {
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+  color: #565656;
+}
+
+.paginator {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.table-sem-conteudo {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px;
+}
+
+.table-sem-conteudo h3 {
+  color: #98fb98;
+  font-size: 1.2rem;
+}
+
+.div-button-add-models {
+  display: flex;
+  padding: 10px;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  button {
+    width: 250px;
+    height: 55px;
+    background: #98fb98;
+    border-radius: 0px;
+    opacity: 1;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    span {
+      color: black;
+      font-size: 1.1rem;
+      width: 1.5rem;
+    }
+  }
+}

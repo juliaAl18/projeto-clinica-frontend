@@ -1,0 +1,74 @@
+<div class="div-geral">
+    <mat-card class="card-informacoes">
+        <header>
+            <div class="div-header">
+                <div class="title-aplication">
+                    <h1>Consultar Equipamentos</h1>
+                </div>
+
+                <div class="div-button-add-models">
+                    <button mat-flat-button mat-button (click)="irParaCadastro()" type="button">
+                        <span>Incluir novo equipamento</span>
+                    </button>
+                </div>
+                <div class="sub-div-container-buttons-inputs">
+                    <form class="formulario-filtros" [formGroup]="formulario">
+                        <div class="campo">
+                            <mat-form-field appearance="outline" class="fullwidth" color="blue">
+                                <mat-label style="font-size: 1.2rem">Nome do equipamento</mat-label>
+                                <input matInput label="Nome" formControlName="nome" (keyup.enter)="filtro()">
+                            </mat-form-field>
+                        </div>
+
+                        <div class="botao-pesquisar-aviso">
+                            <button mat-stroked-button type="button" (click)="filtro()">
+                                <span>Pesquisar</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </header>
+
+        <div class="table-aplication">
+            <table mat-table class="table-Properties" [dataSource]="dataSource">
+
+                <ng-container matColumnDef="nome">
+                    <th mat-header-cell *matHeaderCellDef>Nome</th>
+                    <td mat-cell *matCellDef="let equipamento">{{ equipamento.nome }}</td>
+                </ng-container>
+                <ng-container matColumnDef="tipo">
+                    <th mat-header-cell *matHeaderCellDef>Tipo</th>
+                    <td mat-cell *matCellDef="let equipamento">{{ equipamento.tipo }}</td>
+                </ng-container>
+                <ng-container matColumnDef="marca">
+                    <th mat-header-cell *matHeaderCellDef>Marca</th>
+                    <td mat-cell *matCellDef="let equipamento">{{ equipamento.marca }}</td>
+                </ng-container>
+                <ng-container matColumnDef="anoFabricacao">
+                    <th mat-header-cell *matHeaderCellDef>Ano de Fabricação</th>
+                    <td mat-cell *matCellDef="let equipamento">{{ equipamento.anoFabricacao }}</td>
+                </ng-container>
+                <ng-container matColumnDef="disponivel">
+                    <th mat-header-cell *matHeaderCellDef>Disponível</th>
+                    <td mat-cell *matCellDef="let equipamento">{{ equipamento.disponivel ? 'Sim' : 'Não' }}</td>
+                </ng-container>
+                <ng-container matColumnDef="acao">
+                    <th mat-header-cell *matHeaderCellDef style="text-align: left;">Ação</th>
+                    <td mat-cell *matCellDef="let equipamento">
+                        <mat-icon (click)="irParaEditar(equipamento.id)">edit</mat-icon>
+                        <mat-icon (click)="confirmarExclusao(equipamento.id)">delete</mat-icon>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let equipamento; columns: displayedColumns"></tr>
+            </table>
+        </div>
+    </mat-card>
+</div>
+
+<div class="botao">
+    <button (click)="toggleMenu()"></button>
+    <app-menu-lateral-admin></app-menu-lateral-admin>
+</div>

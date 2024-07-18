@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Planos</title>
+</head>
+
+<body>
+  <div class="container">
+    <h1>Planos</h1>
+  
+    <div class="plan-container">
+      <div class="plan" *ngFor="let plano of planos">
+        <h2>{{ plano.nome }}</h2>
+        <p>{{ plano.descricao }}</p>
+        <p><strong>Incluso:</strong> {{ plano.incluso }}</p>
+        <div class="price-container">
+          <p class="price">{{ plano.preco }}</p>
+          <p class="observation">Cada membro incluído acrescenta R$ 65,00 ao preço mensal.</p>
+        </div>
+        <button class="btn" [routerLink]="['/compra', plano.id]">Contratar</button>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

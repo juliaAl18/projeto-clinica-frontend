@@ -1,0 +1,12 @@
+<body class="body-gradient">
+  <div class="container">
+    <h1>Convênios Atendidos</h1>
+    <div class="convenios-list">
+      <img *ngFor="let convenio of convenios" [src]="convenio.logoUrl" alt="Logo do convênio" class="convenio-logo">
+    </div>
+  </div>
+  <div class="botao">
+    <button (click)="toggleMenu()"></button>
+    <app-menu-lateral></app-menu-lateral>
+  </div>
+</body>

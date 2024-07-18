@@ -1,0 +1,108 @@
+.menu-toggle-button {
+    position: fixed;
+    top: 8px; /* Ajuste a distância do topo conforme necessário */
+    left: 6px; /* Ajuste a distância da esquerda conforme necessário */
+    background-color: #00aeff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+  
+  .sidebar {
+    width: 250px;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -250px;
+    background-color: #FFFAFA;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.3s;
+  }
+  
+  .sidebar.open {
+    left: 0;
+  }
+  
+  .sidebar h2 {
+    color: black;
+    padding: 10px 15px;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar ul li {
+    padding: 10px 15px;
+  }
+  
+  .sidebar ul li a {
+    color: black;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .sidebar ul li a:hover {
+    transition: 0.2s;
+  }
+  
+  .account-info {
+    padding: 20px;
+    color: black;
+  }
+  
+  .logout-button {
+    padding: 10px 20px;
+    background-color: #fafafa;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .logout-button:hover {
+    background-color: #777;
+    transition: 0.2s;
+  }
+
+  .menu-toggle-button img {
+    width: 24px; /* Ajuste o tamanho do ícone conforme necessário */
+    height: 24px;
+    vertical-align: middle;
+  }
+
+  /* Estilo para o ícone */
+.material-icons {
+  vertical-align: middle; /* Alinha verticalmente com o texto */
+  margin-right: 5px; /* Adiciona um pequeno espaço à direita do ícone */
+}
+
+
+#equipamentos {
+  color: #008000;
+}
+
+#faturamentos {
+  color: #4682B4;
+}
+  
+#dentistas {
+  color: #008080;
+}
+
+#pacientes {
+  color: #FF4500;
+}
+
+.config-item {
+  cursor: pointer; /* Define o cursor como ponteiro para indicar que o item é clicável */
+}
+
+
+  
+
+
+  

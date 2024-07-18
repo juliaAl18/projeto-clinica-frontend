@@ -1,0 +1,47 @@
+.body-gradient {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #85d8ff, #0092d6, #ade0f7);
+  transition: background-color 0.5s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+.convenios-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.convenio-logo {
+  width: 150px;
+  height: 150px;
+  object-fit: contain;
+  margin: 10px;
+}
+
+.botao {
+  display: flex;
+  opacity: 1;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+}

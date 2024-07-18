@@ -1,0 +1,35 @@
+.container {
+  display: flex;
+}
+
+.greeting {
+  flex: 1;
+  padding: 20px;
+  text-align: center;
+}
+
+.greeting h1 {
+  font-size: 90px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 1000;
+  margin-bottom: 20px;
+  padding-top: 50px;
+}
+
+.greeting p {
+  font-size: 18px;
+  margin-bottom: 20px;
+  padding-top: 20px;
+}
+
+.main-content {
+  flex: 3;
+}
+
+.admin-image {
+  display: block;
+  margin: 0 auto;
+  width: 1000px;
+  height: auto;
+  padding-top: 70px;
+}

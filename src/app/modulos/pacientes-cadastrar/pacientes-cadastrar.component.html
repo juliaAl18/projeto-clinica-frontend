@@ -1,0 +1,88 @@
+<body>
+  <div class="container">
+    <h2 style="color: #FF4500; font-weight: 600; font-size: 27px;">Cadastro de Paciente</h2>
+    <form (ngSubmit)="cadastrarPaciente()" #form="ngForm">
+      <div class="row">
+        <div class="col-md-6">
+          <label for="nome">Nome do Paciente:</label>
+          <input type="text" id="nome" name="nome" [(ngModel)]="paciente.nome" placeholder="Nome" required
+            #nome="ngModel">
+          <div *ngIf="formSubmitted && nome.invalid && (nome.dirty || nome.touched)" class="error-message">
+            Nome é obrigatório.
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <label for="cpf">CPF:</label>
+          <input type="text" id="cpf" name="cpf" [(ngModel)]="paciente.cpf" placeholder="CPF" required
+            pattern="[0-9]{3}\.[0-9]{3}\.[0-9]{3}-[0-9]{2}" #cpfInput="ngModel" (input)="formatarCPF($event)">
+          <div *ngIf="formSubmitted && cpfInput.invalid && (cpfInput.dirty || cpfInput.touched)" class="error-message">
+            CPF inválido.
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="dataNascimento">Data de Nascimento:</label>
+          <input type="date" id="dataNascimento" name="dataNascimento" [(ngModel)]="paciente.dataNascimento">
+        </div>
+
+        <div class="col-md-6">
+          <label for="genero">Gênero:</label>
+          <select id="genero" name="genero" [(ngModel)]="paciente.genero" style="width: 100%;">
+            <option value="Masculino">Masculino</option>
+            <option value="Feminino">Feminino</option>
+            <option value="Outro">Outro</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" placeholder="Email" [(ngModel)]="paciente.email">
+        </div>
+
+        <div class="col-md-6">
+          <label for="telefone">Telefone:</label>
+          <input type="tel" id="telefone" name="telefone" placeholder="Telefone" [(ngModel)]="paciente.telefone">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="cep">CEP:</label>
+          <input id="cep" [(ngModel)]="paciente.cep" name="cep" placeholder="CEP" maxlength="8" (input)="formatarCEP()"
+            (blur)="buscarEnderecoPorCep()">
+        </div>
+
+        <div class="col-md-6">
+          <label for="endereco">Endereço:</label>
+          <input type="text" id="endereco" name="endereco" placeholder="Endereço" [(ngModel)]="paciente.endereco">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6">
+          <label for="cidade">Cidade:</label>
+          <input type="text" id="cidade" name="cidade" placeholder="Cidade" [(ngModel)]="paciente.cidade">
+        </div>
+
+        <div class="col-md-6">
+          <label for="estado">Estado:</label>
+          <input type="text" id="estado" name="estado" placeholder="Estado" [(ngModel)]="paciente.estado">
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="botoes-formulario-cadastro-avaliacoes">
+            <button mat-flat-button color="warn" type="button" (click)="voltar()">Cancelar</button>
+            <button type="submit">Cadastrar</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</body>

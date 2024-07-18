@@ -1,0 +1,100 @@
+<div class="div-geral">
+  <div class="card-informacoes">
+    <header class="title-aplication">
+      <h1 style="font-size: 1.75rem; padding-top: 35px; font-weight: 500;">Consultar Dentistas</h1>
+      <div class="div-button-add-models">
+        <button mat-flat-button mat-button (click)="irParaCadastro()" type="button">
+          <span>Cadastrar Novo Dentista</span>
+        </button>
+      </div>
+    </header>
+
+    <div class="sub-div-container-buttons-inputs">
+      <form [formGroup]="formularioPesquisa" (ngSubmit)="onSubmit()" class="formulario-filtros">
+        <mat-form-field appearance="outline" class="campo">
+          <mat-label style="font-size: 1.2rem">Nome do Dentista</mat-label>
+          <input matInput formControlName="nome" placeholder="Digite o nome do dentista">
+        </mat-form-field>
+        <button mat-stroked-button type="submit" class="botao-pesquisar-aviso" style=" background-color: #48D1CC; height: 50px; min-width: 140px; padding: 0 20px; color: black; border: 2px solid transparent; font-size: 16px; cursor: pointer; transition: all 0.3s ease;
+          ">
+          <span>Pesquisar</span>
+        </button>
+      </form>
+    </div>
+
+    <div class="table-container">
+      <table mat-table [dataSource]="dentistas" class="table-Properties">
+
+        <ng-container matColumnDef="nome">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Nome</th>
+          <td mat-cell *matCellDef="let dentista">{{ dentista.nome }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="cpf">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>CPF</th>
+          <td mat-cell *matCellDef="let dentista">{{ dentista.cpf }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="especialidade">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Especialidade</th>
+          <td mat-cell *matCellDef="let dentista">{{ dentista.especialidade }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="dataNascimento">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Data de Nascimento</th>
+          <td mat-cell *matCellDef="let dentista">{{ formatarData(dentista.dataNascimento)}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="email">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+          <td mat-cell *matCellDef="let dentista">{{ dentista.email }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="telefone">
+          <th mat-header-cell *matHeaderCellDef>Telefone</th>
+          <td mat-cell *matCellDef="let dentista">{{ formatarTelefone(dentista.telefone)}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="endereco">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Endereço</th>
+          <td mat-cell *matCellDef="let dentista">{{ dentista.endereco }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="cidade">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Cidade</th>
+          <td mat-cell *matCellDef="let dentista">{{ dentista.cidade }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="estado">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Estado</th>
+          <td mat-cell *matCellDef="let dentista">{{ dentista.estado }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="cep">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>CEP</th>
+          <td mat-cell *matCellDef="let dentista">{{ dentista.cep }}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="acao">
+          <th mat-header-cell *matHeaderCellDef>Ação</th>
+          <td mat-cell *matCellDef="let dentista" class="action-icons">
+            <mat-icon (click)="irParaEditar(dentista.id)">edit</mat-icon>
+            <mat-icon (click)="confirmarExclusao(dentista.id)">delete</mat-icon>
+          </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let dentista; columns: displayedColumns"></tr>
+      </table>
+
+      <div class="table-sem-conteudo" *ngIf="!dentistas || dentistas.length === 0">
+        <h3>Nenhum dentista encontrado.</h3>
+      </div>
+    </div>
+  </div>
+
+  <div class="botao">
+    <button (click)="toggleMenu()"></button>
+    <app-menu-lateral-admin></app-menu-lateral-admin>
+  </div>
+</div>

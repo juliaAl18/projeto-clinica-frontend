@@ -1,0 +1,24 @@
+<h2>Selecione um Dentista</h2>
+
+<div class="modal-container">
+  <table>
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dentista of dentistas"
+          [class.selected]="dentista === dentistaSelecionado"
+          (click)="selecionarDentista(dentista)">
+        <td>{{ dentista.nome }}</td>
+        <td>{{ dentista.email }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button mat-raised-button color="primary" class="confirm-button" (click)="confirmarSelecao()">
+    Confirmar Seleção
+  </button>
+</div>

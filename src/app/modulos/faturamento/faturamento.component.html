@@ -1,0 +1,49 @@
+<div class="div-geral">
+  <mat-card class="card-informacoes">
+    <header>
+      <div class="div-header">
+        <div class="title-aplication">
+          <h1>Consultar Faturamentos</h1>
+        </div>
+      </div>
+    </header>
+
+    <div class="div-button-add-models">
+      <button mat-flat-button mat-button (click)="irParaCadastro()" type="button">
+        <span>Incluir novo faturamento</span>
+      </button>
+    </div>
+
+    <table mat-table class="table-Properties" [dataSource]="faturamentos">
+
+      <ng-container matColumnDef="mes">
+        <th mat-header-cell *matHeaderCellDef>Mês</th>
+        <td mat-cell *matCellDef="let faturamento">{{ faturamento.mes }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="ano">
+        <th mat-header-cell *matHeaderCellDef>Ano</th>
+        <td mat-cell *matCellDef="let faturamento">{{ faturamento.ano }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="valor_faturado">
+        <th mat-header-cell *matHeaderCellDef>Valor Faturado</th>
+        <td mat-cell *matCellDef="let faturamento">{{ faturamento.valor_faturado | currency }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+
+      <tr mat-row *matRowDef="let faturamento; columns: displayedColumns"></tr>
+    </table>
+
+    <div class="table-sem-conteudo" *ngIf="faturamentos.length === 0">
+      <h3>Nenhum faturamento encontrado.</h3>
+    </div>
+  </mat-card>
+
+  <div class="botao">
+    <button (click)="toggleMenu()"></button>
+    <app-menu-lateral-admin></app-menu-lateral-admin>
+  </div>
+
+</div>

@@ -1,0 +1,23 @@
+<div class="page-container">
+  <div class="carousel-container">
+    <div class="arrow left" style="align-items: center;" (click)="prevComment()">
+      <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="carousel-track" #carouselTrack>
+      <div class="carousel-item" *ngFor="let comment of comentario; let i = index" [class.active]="i === currentIndex">
+        <strong>{{ comment.nome_usuario }}</strong> - {{ comment.email_usuario }}
+        <p>{{ comment.comentario }}</p>
+        <div class="rating">
+          <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+            <i class="fas fa-star" [ngClass]="{'rated': star <= comment.avaliacao}"></i>
+          </ng-container>
+        </div>
+        <br>
+        <p> {{ comment.data_publicacao | date:'dd/MM/yyyy HH:mm' }}</p>
+      </div>
+    </div>
+    <div class="arrow right" style="align-items: center;" (click)="nextComment()">
+      <i class="fas fa-chevron-right"></i>
+    </div>
+  </div>
+</div>

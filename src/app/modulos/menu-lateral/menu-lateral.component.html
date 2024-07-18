@@ -1,0 +1,20 @@
+<button class="menu-toggle-button" (click)="toggleMenu()">
+  <img [src]="menuIcon" alt="Menu Icon">
+</button>
+<div class="sidebar" [ngClass]="{ 'open': isOpen }">
+  <ul>
+    <li>
+      <a href="/pagina-inicial-home">
+        <i class="material-icons">home</i>Página inicial
+      </a>
+    <li *ngIf="!isAuthenticated">
+      <a routerLink="/login" routerLinkActive="active">
+        <i class="material-icons">account_circle</i>Login
+      </a>
+    </li>
+  </ul>
+  <div class="account-info" *ngIf="isAuthenticated">
+    <p>Nome do Usuário</p>
+    <p>email@example.com</p>
+  </div>
+</div>

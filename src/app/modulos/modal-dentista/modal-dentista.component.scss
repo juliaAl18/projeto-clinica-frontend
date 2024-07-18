@@ -1,0 +1,48 @@
+.modal-container {
+    padding: 20px;
+    max-width: 600px;
+    width: 100%;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+  }
+  
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  th {
+    background-color: #f0f0f0;
+  }
+  
+  tr:hover {
+    background-color: #f9f9f9;
+    cursor: pointer;
+  }
+  
+  tr.selected {
+    background-color: lightblue;
+  }
+  
+  .confirm-button {
+    margin-top: 20px;
+    font-size: 16px;
+    font-weight: bold;
+    background-color: #87CEFA;; 
+    color: black; 
+    border: none;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+  }
+
+  .confirm-button:hover {
+    background-color: #4682B4; 
+  }
+  

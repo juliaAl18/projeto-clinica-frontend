@@ -1,0 +1,41 @@
+<button class="menu-toggle-button" (click)="toggleMenu()">
+    <img [src]="menuIcon" alt="Menu Icon">
+  </button>
+  <div class="sidebar" [ngClass]="{ 'open': isOpen }">
+    <ul>
+      <li>
+        <a href="/pagina-inicial-home">
+          <i class="material-icons">home</i>Página inicial
+        </a>
+      </li>
+      <li (click)="toggleConfigMenu()" [ngClass]="{ 'active': isConfigOpen }" class="config-item">
+        <i class="material-icons" style="color: black;">settings</i> Configurações
+        <ul *ngIf="isConfigOpen">
+          <li>
+            <a href="/equipamentos">
+              <i class="material-icons" id="equipamentos">build_circle</i> Equipamentos
+            </a>
+          </li>
+          <li>
+            <a href="/faturamento">
+              <i class="material-icons" id="faturamentos">payments</i> Faturamento
+            </a>
+          </li>
+          <li>
+            <a href="/dentistas-consultar">
+              <i class="material-icons" id="dentistas">medical_services</i> Dentistas
+            </a>
+          </li>
+          <li>
+            <a href="/pacientes-consultar">
+              <i class="material-icons" id="pacientes">person_search</i> Pacientes
+            </a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <div class="account-info" *ngIf="isAuthenticated">
+      <p>Nome do Usuário</p>
+      <p>email@example.com</p>
+    </div>
+  </div>
