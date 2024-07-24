@@ -46,7 +46,7 @@ export class PacientesConsultarComponent implements OnInit {
         this.atualizarTabela();
       },
       (error) => {
-        console.error('Erro ao carregar dentistas:', error);
+        console.error('Erro ao carregar pacientes:', error);
       }
     );
   }
@@ -67,7 +67,7 @@ export class PacientesConsultarComponent implements OnInit {
         this.formularioPesquisa.reset();
       },
       (error) => {
-        console.error('Erro ao pesquisar dentistas por nome:', error);
+        console.error('Erro ao pesquisar pacientes por nome:', error);
       }
     );
   }
@@ -108,10 +108,10 @@ export class PacientesConsultarComponent implements OnInit {
   }
 
   confirmarExclusao(id: number): void {
-    if (confirm(`Tem certeza de que deseja excluir esse paciente?`)) {
+    if (confirm(`Tem certeza de que deseja excluir este paciente?`)) {
       this.pacienteService.deletarPaciente(id).subscribe(
         () => {
-          this.snackBar.openSnackBar('Paciente deletado com sucesso!', 'Ok', 'success');
+          this.snackBar.openSnackBar('Paciente deletado com sucesso!', 'Fechar', 'success');
           this.pacientes = this.pacientes.filter(paciente => paciente.id !== id);
           this.atualizarTabela();
         },
@@ -125,14 +125,11 @@ export class PacientesConsultarComponent implements OnInit {
   enviarPromocao(): void {
     this.pacienteService.enviarPromocao().subscribe(
       () => {
-        console.log('E-mails de promoção enviados com sucesso');
         this.snackBar.openSnackBar('Emails enviados com sucesso!', 'Ok', 'success')
         this.errorMessage = ''; 
       },
       error => {
         this.snackBar.openSnackBar('Erro ao enviar E-mails.', 'Ok', 'error')
-        console.error('Erro ao enviar promoção:', error);
-        this.errorMessage = 'Erro ao enviar promoção';
       }
     );
   }

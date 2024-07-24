@@ -41,7 +41,7 @@ export class PagamentoComponent implements OnInit {
 
   cadastrarPagamento(): void {
     if (!this.dataPagamento || !this.valor || !this.metodoPagamento || !this.idDentista || !this.idPaciente) {
-      this.snackBar.openSnackBar('Por favor, preencha todos os campos.', 'Fechar', 'warning');
+      this.snackBar.openSnackBar('Por favor, preencha todos os campos.', 'Ok', 'warning');
       return;
     }
 
@@ -60,7 +60,7 @@ export class PagamentoComponent implements OnInit {
           this.router.navigate(['/faturamento']);
         },
         error => {
-          this.snackBar.openSnackBar('Erro ao cadastrar pagamento', 'Fechar', 'error');
+          this.snackBar.openSnackBar('Erro ao cadastrar pagamento', 'Ok', 'error');
           console.error('Erro ao cadastrar pagamento:', error);
         }
       );

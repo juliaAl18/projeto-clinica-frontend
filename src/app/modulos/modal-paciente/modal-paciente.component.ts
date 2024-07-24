@@ -30,7 +30,7 @@ export class ModalPacienteComponent implements OnInit {
         this.pacientes = data;
       },
       (error) => {
-        console.error('Erro ao obter dentistas:', error);
+        console.error('Erro ao obter pacientes:', error);
       }
     );
   }
@@ -43,7 +43,7 @@ export class ModalPacienteComponent implements OnInit {
     if (this.pacienteSelecionado) {
       this.dialogRef.close(this.pacienteSelecionado);
     } else {
-      this.snackBar.openSnackBar('Por favor, selecione pelo menos 1 paciente.', 'Fechar', 'warning')
+      this.snackBar.openSnackBar('Por favor, selecione pelo menos 1 paciente.', 'Ok', 'warning')
     }
   }
 };

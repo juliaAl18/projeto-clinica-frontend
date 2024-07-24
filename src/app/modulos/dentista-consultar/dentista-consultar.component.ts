@@ -58,7 +58,6 @@ export class DentistaConsultarComponent implements OnInit {
       (data) => {
         console.log(data);
         this.dentistas = data;
-        console.log('Dentistas carregados:', this.dentistas);
         this.formularioPesquisa.reset();
       },
       (error) => {
@@ -85,7 +84,7 @@ export class DentistaConsultarComponent implements OnInit {
   }
 
   confirmarExclusao(id: number): void {
-    if (confirm(`Tem certeza de que deseja excluir esse dentista?`))
+    if (confirm(`Tem certeza de que deseja excluir este dentista?`))
       this.dentistaService.deletarDentista(id).subscribe(
         () => {
           this.snackBar.openSnackBar('Dentista deletado com sucesso!', 'Ok', 'success')

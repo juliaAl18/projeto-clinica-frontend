@@ -28,9 +28,9 @@
       <label for="dataPagamento">Data do Pagamento</label>
       <input id="dataPagamento" type="date" [(ngModel)]="dataPagamento" [ngModelOptions]="{standalone: true}" required>
     </div>
-    <div class="col-lg-12 botoes-formulario-cadastro">
-      <button mat-flat-button color="warn" type="button" (click)="cancelar()" >Cancelar</button>
-      <button mat-button (click)="cadastrarPagamento()">Cadastrar Pagamento</button>
+    <div class="col-lg-12 botoes-formulario-cadastro" style="height: 50px;">
+      <button mat-flat-button type="button" (click)="cancelar()" >Cancelar</button>
+      <button mat-button (click)="cadastrarPagamento()">Cadastrar</button>
     </div>
    
    </div>

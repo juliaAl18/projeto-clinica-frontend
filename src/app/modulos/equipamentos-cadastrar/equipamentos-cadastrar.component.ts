@@ -48,18 +48,17 @@ export class EquipamentosCadastrarComponent implements OnInit {
       const dadosEquipamento = this.equipamentoForm.value;
       this.equipamentosService.cadastrarEquipamento(dadosEquipamento).subscribe(
         () => {
-          this.snackBar.openSnackBar('Equipamento cadastrado com sucesso', 'Fechar', 'success');
+          this.snackBar.openSnackBar('Equipamento cadastrado com sucesso', 'Ok', 'success');
           this.equipamentoForm.reset();
           this.router.navigate(['/equipamentos']);
           this.carregarEquipamentos();
         },
         (error) => {
-          console.error('Erro ao cadastrar equipamento:', error);
           this.snackBar.openSnackBar('Erro ao cadastrar equipamento', 'Fechar', 'error');
         }
       );
     } else {
-      this.snackBar.openSnackBar('Por favor, preencha todos os campos obrigatórios', 'Fechar', 'warning');
+      this.snackBar.openSnackBar('Por favor, preencha todos os campos', 'Fechar', 'warning');
     }
   }
 

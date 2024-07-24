@@ -45,7 +45,6 @@ export class FaturamentoComponent implements OnInit {
   carregarFaturamentos(): void {
     this.faturamentoService.getFaturamentos().subscribe(
       faturamentos => {
-        console.log('Faturamentos carregados:', faturamentos);
         this.faturamentos = faturamentos;
       },
       error => {

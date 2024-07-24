@@ -56,7 +56,7 @@ export class CadastroComponent implements OnInit {
 
         if (response.includes('Usuário cadastrado com sucesso')) {
           this.snackBar.openSnackBar(
-            "Usuário Cadastrado com sucesso!",
+            "Usuário cadastrado com sucesso!",
             "Ok",
             "success"
           );
@@ -102,7 +102,7 @@ export class CadastroComponent implements OnInit {
           }
         } else {
           this.snackBar.openSnackBar(
-            "Erro ao cadastrar usuário. Por favor, tente novamente mais tarde.",
+            "Erro ao cadastrar usuário",
             "Ok",
             "error"
           );

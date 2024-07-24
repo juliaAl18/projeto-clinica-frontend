@@ -45,7 +45,7 @@ export class DentistasEditarComponent implements OnInit {
         this.dentistaId = +idParam;
         this.carregarEquipamento(this.dentistaId);
       } else {
-        console.error('ID do equipamento não encontrado na rota');
+        console.error('ID do dentista não encontrado na rota');
       }
     });
   }
@@ -56,7 +56,7 @@ export class DentistasEditarComponent implements OnInit {
         this.dentista = data;
       },
       (error: HttpErrorResponse) => {
-        console.error('Erro ao carregar equipamento:', error);
+        console.error('Erro ao carregar dentista:', error);
       }
     );
   }
@@ -70,30 +70,26 @@ export class DentistasEditarComponent implements OnInit {
       this.minhaSubscricao = this.dentistaService.editarDentista(this.dentistaId, this.dentista).subscribe(
         (response: any) => {
           this.snackBar.openSnackBar(
-            "Edição concluída com sucesso!",
+            "Dentista editado com sucesso!",
             "Ok",
             "success"
           );
-          console.log('Equipamento atualizado com sucesso!');
           this.router.navigate(['dentistas-consultar'])
         },
         (error: HttpErrorResponse) => {
           this.snackBar.openSnackBar(
-            "Erro ao atualizar equipamento.!",
+            "Erro ao atualizar dentista",
             "Ok",
             "error"
           );
-          console.error('Erro ao atualizar equipamento:', error);
-          console.error('Detalhes do erro:', error.error);
         }
       );
     } else {
       this.snackBar.openSnackBar(
-        "Equipamento não carregado ou inválido",
+        "Dentista não carregado ou inválido",
         "Ok",
         "warning"
       );
-      console.error('Equipamento não carregado ou inválido');
     }
   }
 

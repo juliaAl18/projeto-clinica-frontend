@@ -51,7 +51,6 @@ export class EquipamentosComponent implements OnInit {
         this.dataSource.data = equipamentos;
       },
       (error) => {
-        console.error('Erro ao carregar equipamentos após exclusão:', error);
       }
     );
   }
@@ -65,7 +64,7 @@ export class EquipamentosComponent implements OnInit {
   }
 
   abrirDialog(equipamento: EquipamentoInterface): void {
-    console.log('Abrir dialog para:', equipamento);
+    console.log(equipamento);
   }
 
   confirmarExclusao(equipamentoId: number): void {

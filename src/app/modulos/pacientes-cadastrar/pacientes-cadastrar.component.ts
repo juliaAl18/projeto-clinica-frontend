@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { PacienteInterface } from 'src/app/interfaces/paciente/paciente.interface';
 import { PacientesService } from 'src/app/services/pacientes/pacientes.service';
+import { SnackBarService } from 'src/app/services/snackBar/snack-bar.service';
 
 @Component({
   selector: 'app-pacientes-cadastrar',
@@ -22,7 +23,8 @@ export class PacientesCadastrarComponent implements OnInit {
 
   constructor(
     private pacienteService: PacientesService,
-    private router: Router
+    private router: Router,
+    private snackBar: SnackBarService,
   ) { }
 
   ngOnInit(): void { }
@@ -34,7 +36,6 @@ export class PacientesCadastrarComponent implements OnInit {
       this.pacienteService.cadastrarPaciente(this.paciente)
         .subscribe(
           (res) => {
-            console.log('Paciente cadastrado com sucesso:', res);
             this.paciente = {
               nome: '',
               cpf: '',
@@ -45,6 +46,11 @@ export class PacientesCadastrarComponent implements OnInit {
               cep: ''
             };
             this.formSubmitted = false;
+            this.snackBar.openSnackBar(
+              "Paciente cadastrado com sucesso!",
+              "Ok",
+              "success"
+            );
             this.router.navigate(['/pacientes-consultar'])
           },
           (err) => {

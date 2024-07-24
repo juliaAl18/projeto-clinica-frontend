@@ -15,7 +15,7 @@ export class DentistaService {
   ) { }
   
   cadastrarDentista(dentistaData: Dentista): Observable<Dentista> {
-    return this.http.post<Dentista>(`${this.baseUrl}/cadastrar-dentistas`, dentistaData);
+    return this.http.post<Dentista>(`${this.baseUrl}/dentistas`, dentistaData);
   }
 
   consultarCep(cep: string) {
@@ -33,11 +33,11 @@ export class DentistaService {
   }
 
   deletarDentista(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/dentistas-deletar/${id}`);
+    return this.http.delete(`${this.baseUrl}/dentistas/${id}`);
   }
 
   editarDentista(id: number, Dentista: Dentista): Observable<Dentista> {
-    return this.http.put<Dentista>(`http://localhost:3000/api/dentistas-editar/${id}`, Dentista);
+    return this.http.put<Dentista>(`${this.baseUrl}/dentistas/${id}`, Dentista);
   }
 
   dentistaPorId(id: number): Observable<Dentista> {

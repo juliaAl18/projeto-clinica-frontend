@@ -44,7 +44,6 @@ export class DentistasCadastrarComponent implements OnInit {
       (response) => {
         this.snackBar.openSnackBar('Dentista cadastrado com sucesso!', 'Ok', 'success'),
           this.router.navigate(['/dentistas-consultar'])
-        console.log('Dentista cadastrado com sucesso:', response);
         this.dentista = {
           nome: '',
           cpf: '',

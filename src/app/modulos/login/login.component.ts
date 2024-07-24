@@ -45,7 +45,6 @@ export class LoginComponent implements OnInit {
         } else {
           this.snackBar.openSnackBar('Login bem sucedido!', 'Fechar', 'success');
           this.router.navigate(['/pagina-inicial-home']);
-          
         }
       },
       (err) => {

@@ -43,20 +43,20 @@ export class PacientesEditarComponent implements OnInit {
       const idParam = params.get('id');
       if (idParam !== null) {
         this.pacienteId = +idParam;
-        this.carregarEquipamento(this.pacienteId);
+        this.carregarPaciente(this.pacienteId);
       } else {
-        console.error('ID do equipamento não encontrado na rota');
+        console.error('ID do paciente não encontrado na rota');
       }
     });
   }
 
-  carregarEquipamento(id: number): void {
+  carregarPaciente(id: number): void {
     this.minhaSubscricao = this.pacienteService.pacientePorId(id).subscribe(
       (data: PacienteInterface) => {
         this.paciente = data;
       },
       (error: HttpErrorResponse) => {
-        console.error('Erro ao carregar equipamento:', error);
+        console.error('Erro ao carregar paciente:', error);
       }
     );
   }
@@ -78,7 +78,7 @@ export class PacientesEditarComponent implements OnInit {
         },
         (error: HttpErrorResponse) => {
           this.snackBar.openSnackBar(
-            "Erro ao atualizar Paciente.",
+            "Erro ao atualizar paciente.",
             "Ok",
             "error"
           );
@@ -88,7 +88,7 @@ export class PacientesEditarComponent implements OnInit {
       this.snackBar.openSnackBar(
         "Paciente não carregado ou inválido",
         "Ok",
-        "warning"
+        "error"
       );
     }
   }

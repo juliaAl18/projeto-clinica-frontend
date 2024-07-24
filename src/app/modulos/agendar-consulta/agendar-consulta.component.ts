@@ -54,17 +54,15 @@ export class AgendarConsultaComponent implements OnInit {
 
   buscarHorariosDisponiveis(): void {
     if (!this.dataSelecionada) {
-      console.error('Data não selecionada.');
+      this.snackBar.openSnackBar('Por favor, selecione uma data', 'Ok', 'warning');
       return;
     }
 
     this.consultaService.getHorariosDisponiveis(this.dataSelecionada).subscribe(
       (response: any) => {
-        console.log('Horários disponíveis recebidos:', response);
         this.horariosDisponiveis = response.horariosDisponiveis;
       },
       (error) => {
-        console.error('Erro ao buscar horários disponíveis:', error);
         this.snackBar.openSnackBar('Erro ao buscar horários disponíveis. Por favor, tente novamente.', 'Fechar', 'error');
       }
     );

@@ -32,7 +32,7 @@ export class PacientesService {
   }
 
   editarPaciente(id: number, paciente: PacienteInterface): Observable<PacienteInterface> {
-    return this.http.put<PacienteInterface>(`${this.baseUrl}/paciente-editar/${id}`, paciente);
+    return this.http.put<PacienteInterface>(`${this.baseUrl}/pacientes/${id}`, paciente);
   }
 
   pacientePorId(id: number): Observable<PacienteInterface> {
@@ -40,7 +40,7 @@ export class PacientesService {
   }
 
   deletarPaciente(id: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/pacientes-deletar/${id}`);
+    return this.http.delete(`${this.baseUrl}/pacientes/${id}`);
   }
 
   enviarPromocao(): Observable<string> {

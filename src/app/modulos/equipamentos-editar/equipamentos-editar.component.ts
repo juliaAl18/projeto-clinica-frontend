@@ -62,7 +62,7 @@ export class EquipamentosEditarComponent implements OnInit, OnDestroy {
       this.minhaSubscricao = this.equipamentosService.atualizarEquipamento(this.equipamentoId, this.equipamento).subscribe(
         (response: any) => {
           this.snackBar.openSnackBar(
-            "Edição concluída com sucesso!",
+            "Equipamento editado com sucesso!",
             "Ok",
             "success"
           );
@@ -75,8 +75,6 @@ export class EquipamentosEditarComponent implements OnInit, OnDestroy {
             "Ok",
             "error"
           );
-          console.error('Erro ao atualizar equipamento:', error);
-          console.error('Detalhes do erro:', error.error);
         }
       );
     } else {
@@ -85,7 +83,6 @@ export class EquipamentosEditarComponent implements OnInit, OnDestroy {
         "Ok",
         "warning"
       );
-      console.error('Equipamento não carregado ou inválido');
     }
   }
 }
